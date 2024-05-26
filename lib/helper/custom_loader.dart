@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:overlay_kit/overlay_kit.dart';
 
-import '../constants/colors.dart';
 
 customLoadStart() {
   return  OverlayLoadingProgress.start(
@@ -11,7 +10,7 @@ customLoadStart() {
       width: 100,
       color: Colors.black38,
       child: const Center(
-        child: CupertinoActivityIndicator(color: white),
+        child: CupertinoActivityIndicator(color: Colors.white),
       ),
     ),
   );

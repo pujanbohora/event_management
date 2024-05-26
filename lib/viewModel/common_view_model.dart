@@ -145,32 +145,6 @@ class CommonViewModel extends ChangeNotifier {
     }
     notifyListeners();
   }
-
-  // ApiResponse _userDetailsApiResponse = ApiResponse.initial("Empty Data");
-  // ApiResponse get userDetailsApiResponse => _userDetailsApiResponse;
-  // Authenticateduserresponse _user = Authenticateduserresponse();
-  // Authenticateduserresponse get user => _user;
-  //
-  // Future<void> fetchUser() async {
-  //   _userDetailsApiResponse = ApiResponse.initial("Loading");
-  //   notifyListeners();
-  //   try {
-  //     Authenticateduserresponse res =
-  //         await Authenticateduserservice().getuser();
-  //     if (res.success == true) {
-  //       _user = res;
-  //
-  //       _userDetailsApiResponse = ApiResponse.completed(res.success.toString());
-  //       notifyListeners();
-  //     } else {
-  //       _userDetailsApiResponse = ApiResponse.error(res.success.toString());
-  //     }
-  //   } catch (e) {
-  //     print("VM CATCH ERR :: " + e.toString());
-  //     _userDetailsApiResponse = ApiResponse.error(e.toString());
-  //   }
-  //   notifyListeners();
-  // }
 }
 
 

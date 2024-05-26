@@ -45,8 +45,6 @@ dependencies:
   path: ^1.8.0
   path_provider: ^2.0.6
   image_picker: ^1.0.1
-  hive: ^2.0.4
-  hive_flutter: ^1.1.0
   fluttertoast: ^8.0.8
   toastification: ^2.0.0
   readmore: ^2.1.0

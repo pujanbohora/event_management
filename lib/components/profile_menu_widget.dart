@@ -21,9 +21,6 @@ class ProfileMenuWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    // var isDark = MediaQuery.of(context).platformBrightness == Brightness.dark;
-    // var iconColor = isDark ? tPrimaryColor : tAccentColor;
-
     return ListTile(
       onTap: onPress,
       leading: Container(

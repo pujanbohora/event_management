@@ -1,6 +1,5 @@
 import 'dart:convert';
 
-import 'package:eventmanagement/screen/update_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -90,19 +89,6 @@ class _SettingScreenState extends State<SettingScreen> {
               const Text("Event Manager"),
               const SizedBox(height: 20),
 
-              /// -- BUTTON
-              // SizedBox(
-              //   width: 200,
-              //   child: ElevatedButton(
-              //     onPressed: () {
-              //       Navigator.push(context, MaterialPageRoute(builder: (context)=> UpdateProfileScreen()));
-              //     },
-              //     style: ElevatedButton.styleFrom(
-              //         backgroundColor: Colors.black, side: BorderSide.none, shape: const StadiumBorder()),
-              //     child: const Text("tEditProfile", style: TextStyle(color: Colors.black)),
-              //   ),
-              // ),
-              const SizedBox(height: 30),
               const Divider(),
               const SizedBox(height: 10),
               ProfileMenuWidget(

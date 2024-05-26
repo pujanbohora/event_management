@@ -15,24 +15,6 @@ import '../api.dart';
 class UserRepository {
   API api = API();
 
-  // Future<LoginResponse> login(data) async {
-  //   dynamic response = await api.postData(data, Endpoints.login);
-  //   LoginResponse res = LoginResponse.fromJson(response);
-  //   return res;
-  // }
-  //
-  // Future<Authenticateduserresponse> fetchAuthenticatedUser() async {
-  //   dynamic response;
-  //   Authenticateduserresponse res;
-  //   try {
-  //     response = await api.getWithToken(Endpoints.authenticatedUserdetails);
-  //     res = Authenticateduserresponse.fromJson(response);
-  //   } catch (e) {
-  //     res = Authenticateduserresponse.fromJson(response);
-  //   }
-  //   return res;
-  // }
-  //
   Future<CommonResponse> registerUser(data) async {
     dynamic response;
     CommonResponse res;

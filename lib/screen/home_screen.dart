@@ -8,15 +8,6 @@ import '../config/api_response_config.dart';
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
 
-  // late CommonViewModel _provider;
-  //
-  // getData() async {
-  //   WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-  //     _provider = Provider.of<CommonViewModel>(context, listen: false);
-  //     _provider.fetchMyBooking();
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     TextEditingController searchController = TextEditingController();

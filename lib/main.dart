@@ -7,14 +7,10 @@ import 'package:eventmanagement/viewModel/common_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:overlay_kit/overlay_kit.dart';
 import 'package:provider/provider.dart';
 import 'config/environment.config.dart';
-import 'config/hive.conf.dart';
 import 'config/preference_utils.dart';
-import 'constants.dart';
-import 'constants/colors.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -22,17 +18,6 @@ Future<void> main() async {
   await dotenv.load(fileName: '.env');
   await EnvironmentConfig().init();
   await PreferenceUtils.init();
-  await Hive.initFlutter();
-  await HiveUtils.init();
-  // ByteData data =
-  //     await PlatformAssetBundle().load('assets/lets-encrypt-r3.pem');
-  // SecurityContext.defaultContext
-  //     .setTrustedCertificatesBytes(data.buffer.asUint8List());
-  // FlutterError.onError = (FlutterErrorDetails details){
-  //   print("details of error");
-  //   print(details.exception);
-  //       print(details);
-  // };
   runApp(const MyApp());
 }
 
@@ -64,7 +49,7 @@ class MyApp extends StatelessWidget {
                     ),
                     centerTitle: false, elevation: 0, shadowColor: Colors.transparent),
                 scaffoldBackgroundColor: const Color(0xFFD4D4F7),
-                primaryColor: kPrimaryColor,
+                primaryColor: Color(0XFF6A62B7),
                 // fontFamily: "Muli",
                 // textTheme: GoogleFonts.robotoTextTheme(Theme.of(context).textTheme)),
                 textTheme: const TextTheme(
