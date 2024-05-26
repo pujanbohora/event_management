@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:eventmanagement/screen/update_profile_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,14 +11,33 @@ import '../components/profile_menu_widget.dart';
 import '../config/preference_utils.dart';
 import '../helper/custom_loader.dart';
 import '../helper/snack_this.dart';
+import '../model/response/login_response.dart';
 
-class SettingScreen extends StatelessWidget {
+class SettingScreen extends StatefulWidget {
   const SettingScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<SettingScreen> createState() => _SettingScreenState();
+}
 
-    final SharedPreferences localStorage = PreferenceUtils.instance;
+class _SettingScreenState extends State<SettingScreen> {
+
+  final SharedPreferences localStorage = PreferenceUtils.instance;
+
+  User? user;
+
+  getUser() async {
+    String? userData = localStorage.getString('_auth_');
+    Map<String, dynamic> userMap = json.decode(userData!);
+    User userD = User.fromJson(userMap);
+    setState(() {
+      user = userD;
+    });
+  }
+
+
+  @override
+  Widget build(BuildContext context) {
 
     return Scaffold(
       appBar: AppBar(
@@ -65,7 +86,7 @@ class SettingScreen extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 10),
-              const Text("Pujan Bohora", ),
+              Text(user?.fullname ?? "N/A", ),
               const Text("Event Manager"),
               const SizedBox(height: 20),
 
@@ -173,5 +194,4 @@ class SettingScreen extends StatelessWidget {
       },
     );
   }
-
 }
