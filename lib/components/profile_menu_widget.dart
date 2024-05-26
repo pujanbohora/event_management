@@ -33,7 +33,7 @@ class ProfileMenuWidget extends StatelessWidget {
           borderRadius: BorderRadius.circular(100),
           color: Colors.black,
         ),
-        child: Icon(icon, color: Colors.black),
+        child: Icon(icon, color: Colors.white),
       ),
       title: Text(title),
       trailing: endIcon? Container(

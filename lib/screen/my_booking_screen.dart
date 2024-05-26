@@ -99,7 +99,7 @@ class BookingHistoryCard extends StatelessWidget {
               style: GoogleFonts.getFont(
                 'Poppins',
                 fontWeight: FontWeight.w600,
-                fontSize: 12,
+                fontSize: 16,
                 color: const Color(0xFF000000),
               ),
             ),
@@ -110,7 +110,7 @@ class BookingHistoryCard extends StatelessWidget {
                 style: GoogleFonts.getFont(
                   'Poppins',
                   fontWeight: FontWeight.w600,
-                  fontSize: 10,
+                  fontSize: 12,
                   color: const Color(0xFF78007A),
                 ),
               ),

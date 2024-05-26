@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 
+import 'package:eventmanagement/screen/welcome_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -68,13 +69,13 @@ class _SplashscreenState extends State<Splashscreen> {
               color: Colors.red.shade700,
             );
             Navigator.of(context).pushReplacement(MaterialPageRoute(
-                builder: (BuildContext context) => const LoginScreen()));
+                builder: (BuildContext context) => const WelcomeScreen()));
           }
         } catch (e) {
           localStorage.clear();
           print("CATCH " + e.toString());
           Navigator.of(context).pushReplacement(MaterialPageRoute(
-              builder: (BuildContext context) => const LoginScreen()));
+              builder: (BuildContext context) => const WelcomeScreen()));
           snackThis(
             context: context,
             content: Text(e.toString()),
@@ -86,7 +87,7 @@ class _SplashscreenState extends State<Splashscreen> {
         print("TOKEN NOT FOUND:::");
         localStorage.clear();
         Navigator.of(context).pushReplacement(MaterialPageRoute(
-            builder: (BuildContext context) => const LoginScreen()));
+            builder: (BuildContext context) => const WelcomeScreen()));
       }
     });
   }

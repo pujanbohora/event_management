@@ -23,6 +23,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final TextEditingController _contactController = TextEditingController();
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  bool passwordVisible = false;
 
   @override
   void dispose() {
@@ -101,9 +102,50 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         controller: _emailController,
                       ),
                       20.sH,
-                      inputFieldWidget(
-                        title: 'Password',
-                        controller: _passwordController,
+                      // inputFieldWidget(
+                      //   title: 'Password',
+                      //   controller: _passwordController,
+                      // ),
+                      Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: const Color(0xFFFDE8DE)),
+                          borderRadius: BorderRadius.circular(10),
+                          color: const Color(0xFFFDE8DE),
+                        ),
+                        child: TextFormField(
+                          controller: _passwordController,
+                          obscureText: !passwordVisible,
+                          decoration: InputDecoration(
+                            border: InputBorder.none,
+                            contentPadding: const EdgeInsets.fromLTRB(18.3, 18, 18.3, 18),
+                            hintText: "Password",
+                            hintStyle: GoogleFonts.getFont(
+                              'Poppins',
+                              fontWeight: FontWeight.w500,
+                              fontSize: 16,
+                              color: const Color(0xFF626262),
+                            ),
+                            suffixIcon: IconButton(
+                              icon: Icon(
+                                passwordVisible
+                                    ? Icons.visibility
+                                    : Icons.visibility_off,
+                                color: Theme.of(context).primaryColorDark,
+                              ),
+                              onPressed: () {
+                                setState(() {
+                                  passwordVisible = !passwordVisible;
+                                });
+                              },
+                            ),
+                          ),
+                          style: GoogleFonts.getFont(
+                            'Poppins',
+                            fontWeight: FontWeight.w500,
+                            fontSize: 16,
+                            color: const Color(0xFF626262),
+                          ),
+                        ),
                       ),
                       20.sH,
                       Align(

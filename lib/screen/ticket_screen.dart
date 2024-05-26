@@ -192,8 +192,8 @@ class _TicketScreenState extends State<TicketScreen> {
                           );
 
                           if(context.mounted){
-                            // Navigator.pushNamed(context, "/login");
-                            Navigator.of(context).popUntil((route) => route.isFirst);
+                            Navigator.pushNamed(context, "/homeScreen");
+                            // Navigator.of(context).popUntil((route) => route.isFirst);
                             // Navigator.
                           }
                         } else {

@@ -33,7 +33,7 @@ class _NavigationState extends State<Navigation>
 
     commonViewModel = Provider.of<CommonViewModel>(context, listen: false);
     WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-    commonViewModel.fetchEvent();
+    commonViewModel.fetchEvent("");
     commonViewModel.fetchMyBooking();
     });
 

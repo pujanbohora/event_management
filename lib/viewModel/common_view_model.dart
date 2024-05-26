@@ -100,11 +100,11 @@ class CommonViewModel extends ChangeNotifier {
   EventResponse _eventData = EventResponse();
   EventResponse get eventData => _eventData;
 
-  Future<void> fetchEvent() async {
+  Future<void> fetchEvent(String search) async {
     _eventDataApiResponse = ApiResponse.initial("Loading");
     notifyListeners();
     try {
-      EventResponse res = await UserRepository().getEventData();
+      EventResponse res = await UserRepository().getEventData(search);
       if (res.success == true) {
         _eventData = res;
 
